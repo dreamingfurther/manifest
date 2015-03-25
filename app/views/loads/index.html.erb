@@ -1,0 +1,15 @@
+<p>
+  Here are the loads!
+  </br>
+  <%= link_to 'Home', root_path %>
+</p>
+
+<%- @loads.each do |load| %>
+  <p>
+    load:
+    <%= load.number %>
+    </br>
+    on plane:
+    <%= load.plane.model %>
+  </p>
+<% end %>

@@ -1,3 +1,28 @@
-Planes Index Page
+<p>
+  Planes Index Page
+  </br>
+  <%= link_to 'New Planes', new_plane_path %>
+  </br>
+  <%= link_to 'All Loads', loads_path %>
+</p>
 
-<a href= "<%= new_plane_path %>"> New Planes </a>
+</br>
+Here is a list of Planes:
+
+<%- @planes.each do |plane| %>
+  </p>
+    <%= plane.model %>
+    </br>
+    Flown by:
+    <%= plane.pilot %>
+    </br>
+  <p>
+<% end %>
+
+</br>
+Loads per user:
+</br>
+<%- @jumpers.each do |jumper| %>
+  <%= link_to jumper.name, jumper_loads_path(jumper) %>
+  </br>
+<% end %>
